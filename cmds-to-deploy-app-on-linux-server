@@ -1,0 +1,40 @@
+sudo cd /root
+sudo su 
+cd /root
+mkdir /opt/java/
+cd /opt/java
+sudo yum install java -y
+cd /root
+mkdir /opt/maven/
+cd /opt/maven
+wget https://downloads.apache.org/maven/maven-3/3.6.3/binaries/apache-maven-3.6.3-bin.tar.gz
+tar -xvzf apache-maven-3.6.3-bin.tar.gz
+cd /root
+sudo yum install git -y
+
+
+============================================================
+vi .bash_profile
+add below to .bash_profile
+-----------------------------------------
+click on i button
+JAVA_HOME=/opt/java/java-1.8.0			
+M2_HOME=/opt/maven/apache-maven-3.6.3
+M2=$M2_HOME/bin
+PATH=$PATH:$JAVA_HOME:$M2_HOME:$M2:$HOME/bin
+
+click on esc
+and type :wq
+and click enter
+===========================================
+
+source .bash_profile
+
+git clone https://github.com/mahidhardurga/test-web-server.git
+
+cd test-web-server
+cd demoPractice
+mvn clean install
+if build sucsess
+cd target
+java -jar generated.jar
