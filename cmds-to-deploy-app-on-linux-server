@@ -1,4 +1,3 @@
-sudo cd /root
 sudo su 
 cd /root
 mkdir /opt/java/
