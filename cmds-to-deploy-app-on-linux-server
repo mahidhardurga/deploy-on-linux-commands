@@ -37,3 +37,11 @@ mvn clean install
 if build sucsess
 cd target
 java -jar generated.jar
+
+
+if everything is fine, you are good to go
+App should start Tomcat on port 8080(default)
+Then copy your server public ip address
+Then hit the url http://publicIp:8080(port number in which tomcat started)
+
+
